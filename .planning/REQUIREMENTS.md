@@ -24,7 +24,7 @@
 ### Déploiement
 
 - [ ] **DEPL-01**: La commande `npm run deploy` (ou `wrangler pages deploy ./dist`) fonctionne et pousse le site sur Cloudflare Pages
-- [ ] **DEPL-02**: L'URL canonique dans astro.config.mjs est corrigée (focom-suportsbanquepostale.fr → focom-supportsbanquepostale.fr ou domaine réel)
+- [x] **DEPL-02**: L'URL canonique dans astro.config.mjs est corrigée (focom-suportsbanquepostale.fr → focom-supportsbanquepostale.fr ou domaine réel)
 
 ## v2 Requirements
 
@@ -66,7 +66,7 @@
 | CONT-01 | 1 | Pending |
 | CONT-02 | 1 | Pending |
 | DEPL-01 | 3 | Pending |
-| DEPL-02 | 1 | Pending |
+| DEPL-02 | 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 9 total

@@ -7,7 +7,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Site Foundation Fixes** - Correct URL typo and centralize contact data
+- [x] **Phase 1: Site Foundation Fixes** - Correct URL typo and centralize contact data (completed 2026-04-02)
 - [ ] **Phase 2: Branding & Logo** - Prepare Header for logo image and document in contribution guide
 - [ ] **Phase 3: Contribution & Deployment Guide** - Complete documentation enabling contributors to create articles and deploy independently
 
@@ -26,11 +26,11 @@
 2. Contact page displays no duplicate representatives
 3. Contact data (email, representatives, permanences) is stored in a single configuration source (not duplicated in HTML template)
 
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 01-01-PLAN.md — Correction de la typo URL canonique dans astro.config.mjs
-- [ ] 01-02-PLAN.md — Centralisation des données contact dans src/config/contact.ts et suppression des doublons
+- [x] 01-01-PLAN.md — Correction de la typo URL canonique dans astro.config.mjs
+- [x] 01-02-PLAN.md — Centralisation des données contact dans src/config/contact.ts et suppression des doublons
 
 ---
 
@@ -74,6 +74,6 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Foundation Fixes | 0/2 | Not started | — |
+| 1. Site Foundation Fixes | 2/2 | Complete   | 2026-04-02 |
 | 2. Branding & Logo | 0/2 | Not started | — |
 | 3. Contribution & Deployment Guide | 0/5 | Not started | — |
