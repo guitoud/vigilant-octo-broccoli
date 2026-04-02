@@ -18,8 +18,8 @@
 
 ### Contact
 
-- [ ] **CONT-01**: La page contact affiche des coordonnées réelles sans doublons de représentants
-- [ ] **CONT-02**: Les données de contact (email, représentants, permanences) sont centralisées dans un fichier de configuration ou un composant dédié — pas dupliquées dans le HTML
+- [x] **CONT-01**: La page contact affiche des coordonnées réelles sans doublons de représentants
+- [x] **CONT-02**: Les données de contact (email, représentants, permanences) sont centralisées dans un fichier de configuration ou un composant dédié — pas dupliquées dans le HTML
 
 ### Déploiement
 
@@ -63,8 +63,8 @@
 | DOCS-03 | 3 | Pending |
 | DOCS-04 | 3 | Pending |
 | BRAND-01 | 2 | Pending |
-| CONT-01 | 1 | Pending |
-| CONT-02 | 1 | Pending |
+| CONT-01 | 1 | Complete |
+| CONT-02 | 1 | Complete |
 | DEPL-01 | 3 | Pending |
 | DEPL-02 | 1 | Complete |
 
