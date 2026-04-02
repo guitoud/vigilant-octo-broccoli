@@ -19,6 +19,8 @@ Les militants peuvent publier un article en quelques minutes via un simple fichi
 - ✓ Structure de base (Header, Footer, BaseLayout, nav active) — existing
 - ✓ Page contact avec email, permanences, représentants — existing
 - ✓ wrangler.toml configuré pour Cloudflare Pages (output: ./dist) — existing
+- ✓ Corriger le typo d'URL dans astro.config.mjs (focom-suportsbanquepostale.fr → focom-supportsbanquepostale.fr) — Validated in Phase 1: site-foundation-fixes
+- ✓ Page contact : corriger les doublons de représentants et rendre les données configurables — Validated in Phase 1: site-foundation-fixes
 
 ### Active
 
@@ -27,9 +29,7 @@ Les militants peuvent publier un article en quelques minutes via un simple fichi
 - [ ] Guide de contribution : build & vérification
 - [ ] Guide de contribution : déployer via Wrangler
 - [ ] Logo : documenter l'emplacement + préparer le slot dans Header pour fichier image
-- [ ] Page contact : corriger les doublons de représentants et rendre les données configurables
 - [ ] Pipeline Wrangler : documenter les commandes de déploiement, vérifier que `wrangler pages deploy` fonctionne
-- [ ] Corriger le typo d'URL dans astro.config.mjs (focom-suportsbanquepostale.fr → focom-supportsbanquepostale.fr)
 
 ### Out of Scope
 
@@ -81,4 +81,4 @@ Ce document évolue aux transitions de phases et aux jalons.
 3. Audit Out of Scope — raisons toujours valides ?
 
 ---
-*Last updated: 2026-04-02 after initialization*
+*Last updated: 2026-04-02 — Phase 1 complete (URL typo fixed, contact data centralized)*
