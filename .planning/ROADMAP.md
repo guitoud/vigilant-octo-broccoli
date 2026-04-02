@@ -46,9 +46,10 @@ Plans:
 1. Header component has a clearly documented image slot for logo (replaces text "FO")
 2. Contribution guide includes instructions for where to place logo file and how to swap in Header
 
-**Plans:** TBD
+**Plans:** 1 plan
 
-**UI hint:** yes
+Plans:
+- [ ] 02-01-PLAN.md — Documenter le slot logo dans Header.astro (commentaire de remplacement prêt à copier)
 
 ---
 
@@ -75,5 +76,5 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Site Foundation Fixes | 2/2 | Complete   | 2026-04-02 |
-| 2. Branding & Logo | 0/2 | Not started | — |
+| 2. Branding & Logo | 0/1 | Not started | — |
 | 3. Contribution & Deployment Guide | 0/5 | Not started | — |
