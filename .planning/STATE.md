@@ -1,3 +1,17 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+current_plan: None assigned yet
+status: unknown
+last_updated: "2026-04-02T16:58:08.574Z"
+progress:
+  total_phases: 3
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+---
+
 # State: FO Com Supports Banque Postale
 
 **Project:** Static syndical website (Astro 5 + Cloudflare Pages)
@@ -11,6 +25,7 @@
 **Mission:** Transform the existing brownfield Astro 5 site into a documented, maintainable platform where contributors can publish articles and deploy independently without friction.
 
 **Constraints:**
+
 - Astro 5 static-only (no server runtime)
 - Cloudflare Pages + Wrangler for deployment
 - Markdown + frontmatter as editorial workflow
@@ -23,6 +38,7 @@
 **Current Plan:** None assigned yet
 
 **Progress Bar:**
+
 ```
 [                    ] 0/9 requirements complete
 ```
@@ -32,11 +48,13 @@
 ## Performance Metrics
 
 **Planned Delivery:**
+
 - Phase 1: 3 requirements (code changes)
 - Phase 2: 1 requirement (Header + docs)
 - Phase 3: 5 requirements (documentation)
 
 **Requirements Coverage:**
+
 - Total v1: 9
 - Mapped: 9
 - Unmapped: 0
@@ -56,6 +74,7 @@
 ### Known Technical Details
 
 From codebase analysis (2026-04-02):
+
 - `post.id` includes `.md` extension — already corrected in PostCard.astro and [slug].astro (commit bccbc76)
 - Logo: currently text `<span class="brand-mark">FO</span>` in Header.astro
 - Contact page: data hardcoded in template (to be centralized)
@@ -74,7 +93,7 @@ None at planning stage.
 
 ## Session Continuity
 
-**Last Session:** 2026-04-02 (roadmap creation)
+**Last Session:** 2026-04-02T16:58:08.552Z
 **Roadmap Created:** Yes
 **Next Action:** `/gsd:plan-phase 1` to begin Phase 1 planning
 
