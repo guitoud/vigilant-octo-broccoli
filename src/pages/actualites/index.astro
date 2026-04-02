@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PostCard from "../../components/PostCard.astro";
+
+const pageSize = 6;
+const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const pageCount = Math.max(1, Math.ceil(posts.length / pageSize));
+const currentPage = 1;
+const pagedPosts = posts.slice(0, pageSize);
+---
+
+<BaseLayout title="Actualites | FO Com Supports Banque Postale">
+  <Header />
+  <main class="section">
+    <div class="container">
+      <div class="page-heading">
+        <p class="eyebrow">Actualites</p>
+        <h1>Vie de la section et dossiers en cours</h1>
+        <p>
+          Les publications sont gerees en Markdown dans le depot. Cette page affiche les articles les plus recents par
+          ordre chronologique.
+        </p>
+      </div>
+
+      <div class="post-grid">
+        {pagedPosts.map((post) => <PostCard post={post} />)}
+      </div>
+
+      <nav class="pagination" aria-label="Pagination des actualites">
+        {Array.from({ length: pageCount }, (_, index) => index + 1).map((item) => (
+          <a class:list={[item === currentPage && "active"]} href={item === 1 ? "/actualites/" : `/actualites/page/${item}/`}>
+            {item}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

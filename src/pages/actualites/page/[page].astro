@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import PostCard from "../../../components/PostCard.astro";
+
+export async function getStaticPaths() {
+  const pageSize = 6;
+  const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
+
+  return Array.from({ length: totalPages - 1 }, (_, index) => {
+    const currentPage = index + 2;
+    return {
+      params: { page: String(currentPage) },
+      props: {
+        currentPage,
+        totalPages,
+        pagedPosts: posts.slice((currentPage - 1) * pageSize, currentPage * pageSize),
+      },
+    };
+  });
+}
+
+const { currentPage, totalPages, pagedPosts } = Astro.props;
+---
+
+<BaseLayout title={`Actualites - page ${currentPage} | FO Com Supports Banque Postale`}>
+  <Header />
+  <main class="section">
+    <div class="container">
+      <div class="page-heading">
+        <p class="eyebrow">Actualites</p>
+        <h1>Vie de la section et dossiers en cours</h1>
+        <p>Page {currentPage} sur {totalPages} des publications FO Com Supports Banque Postale.</p>
+      </div>
+
+      <div class="post-grid">
+        {pagedPosts.map((post) => <PostCard post={post} />)}
+      </div>
+
+      <nav class="pagination" aria-label="Pagination des actualites">
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map((item) => (
+          <a class:list={[item === currentPage && "active"]} href={item === 1 ? "/actualites/" : `/actualites/page/${item}/`}>
+            {item}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

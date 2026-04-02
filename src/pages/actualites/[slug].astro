@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { formatDate } from "../../utils/format";
+import { resolvePostImage } from "../../utils/images";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const imageSrc = resolvePostImage(post.id, post.data.image);
+---
+
+<BaseLayout title={`${post.data.title} | FO Com Supports Banque Postale`}>
+  <Header />
+  <main class="section">
+    <div class="container article-shell">
+      <a class="back-link" href="/actualites/">Retour aux actualites</a>
+      <p class="post-meta">
+        <span>{post.data.category}</span>
+        <span>{formatDate(post.data.date)}</span>
+      </p>
+      <h1>{post.data.title}</h1>
+      <img class="article-cover" src={imageSrc} alt={post.data.title} />
+      <article class="article-content">
+        <Content />
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

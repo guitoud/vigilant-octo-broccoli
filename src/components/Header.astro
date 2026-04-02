@@ -1,0 +1,36 @@
+---
+const navItems = [
+  { href: "/", label: "Accueil" },
+  { href: "/actualites/", label: "Actualites" },
+  { href: "/contact/", label: "Contact" },
+];
+
+const pathname = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="container header-shell">
+    <a class="brand" href="/">
+      <span class="brand-mark">FO</span>
+      <span class="brand-copy">
+        <strong>FO Com</strong>
+        <span>Supports Banque Postale</span>
+      </span>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a class:list={[isActive(item.href) && "active"]} href={item.href}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
