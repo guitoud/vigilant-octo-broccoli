@@ -49,7 +49,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Documenter le slot logo dans Header.astro (commentaire de remplacement prêt à copier)
+- [x] 02-01-PLAN.md — Documenter le slot logo dans Header.astro (commentaire de remplacement prêt à copier)
 
 ---
 

@@ -14,7 +14,7 @@
 
 ### Branding
 
-- [ ] **BRAND-01**: Le Header expose un slot image clairement documenté pour remplacer le texte "FO" par un fichier logo (SVG/PNG), avec instructions dans le guide de contribution
+- [x] **BRAND-01**: Le Header expose un slot image clairement documenté pour remplacer le texte "FO" par un fichier logo (SVG/PNG), avec instructions dans le guide de contribution
 
 ### Contact
 
@@ -62,7 +62,7 @@
 | DOCS-02 | 3 | Pending |
 | DOCS-03 | 3 | Pending |
 | DOCS-04 | 3 | Pending |
-| BRAND-01 | 2 | Pending |
+| BRAND-01 | 2 | Complete |
 | CONT-01 | 1 | Complete |
 | CONT-02 | 1 | Complete |
 | DEPL-01 | 3 | Pending |
