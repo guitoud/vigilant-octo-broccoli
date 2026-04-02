@@ -27,6 +27,14 @@
 
 ## Known Bugs
 
+**Image resolution always falls back to remote URL (ID mismatch):**
+- Symptoms: Post images are served from the original remote URL instead of the locally downloaded copy in `public/images/posts/`
+- Files: `src/pages/actualites/[slug].astro` (line 19), `src/utils/images.ts`, `scripts/fetch-images.mjs`
+- Root cause: `resolvePostImage(post.id, ...)` is called with `post.id` which includes the `.md` extension (e.g., `bienvenue-site-focom-supports-bp.md`), but the image manifest keys are stored without extension (e.g., `bienvenue-site-focom-supports-bp`). The lookup `map[postId]` always returns `undefined`, so the fallback remote URL is always used.
+- Evidence: `[slug].astro` line 12 uses `post.id.replace(/\.md$/, '')` to strip the extension for slugs, confirming `post.id` includes `.md`
+- Workaround: Images still load because remote URLs work, but the local download pipeline is effectively bypassed
+- Fix: Change line 19 in `[slug].astro` from `resolvePostImage(post.id, ...)` to `resolvePostImage(post.id.replace(/\.md$/, ''), ...)`
+
 **Site URL typo in Astro config:**
 - Symptoms: Canonical URLs, sitemap, and OG meta tags will reference the wrong domain
 - File: `astro.config.mjs` (line 4) — `"https://focom-suportsbanquepostale.fr"` (missing 'p': "suports" instead of "supports")
