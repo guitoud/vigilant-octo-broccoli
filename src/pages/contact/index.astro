@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import { contactData } from "../../config/contact";
 ---
 
 <BaseLayout title="Contact | FO Com Supports Banque Postale">
@@ -17,21 +18,21 @@ import Footer from "../../components/Footer.astro";
         </p>
 
         <ul class="contact-list">
-          <li><strong>Email :</strong> contact@focom-supportsbanquepostale.fr</li>
-          <li><strong>Permanence :</strong> mardi et jeudi de 12h30 a 14h00</li>
-          <li><strong>Site :</strong> Immeuble supports Banque Postale, Paris</li>
+          <li><strong>Email :</strong> {contactData.email}</li>
+          <li><strong>Permanence :</strong> {contactData.permanence}</li>
+          <li><strong>Site :</strong> {contactData.lieu}</li>
         </ul>
       </section>
 
       <section class="contact-card contact-card-alt">
         <p class="eyebrow">Representants</p>
         <ul class="contact-list">
-          <li><strong>Delegue syndical :</strong> Claire Martin</li>
-          <li><strong>Elu CSE :</strong> Yassine Benali</li>
-          <li><strong>Referente QVCT :</strong> Sophie Lambert</li>
+          {contactData.representants.map((r) => (
+            <li><strong>{r.role} :</strong> {r.nom}</li>
+          ))}
         </ul>
         <p>
-          Les messages peuvent aussi etre relayes vers les representants locaux pour les equipes Supports BP et CNP.
+          {contactData.messageRelais}
         </p>
       </section>
     </div>
