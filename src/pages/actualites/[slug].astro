@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const imageSrc = resolvePostImage(post.id, post.data.image);
+const imageSrc = resolvePostImage(post.id.replace(/\.md$/, ""), post.data.image);
 ---
 
 <BaseLayout title={`${post.data.title} | FO Com Supports Banque Postale`}>

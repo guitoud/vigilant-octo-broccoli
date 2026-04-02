@@ -16,11 +16,12 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const imageSrc = resolvePostImage(post.id, post.data.image);
+const slug = post.id.replace(/\.md$/, "");
+const imageSrc = resolvePostImage(slug, post.data.image);
 ---
 
 <article class="post-card">
-  <a href={`/actualites/${post.id}/`} class="post-card-image">
+  <a href={`/actualites/${slug}/`} class="post-card-image">
     <img src={imageSrc} alt={post.data.title} loading="lazy" />
   </a>
 
@@ -29,8 +30,8 @@ const imageSrc = resolvePostImage(post.id, post.data.image);
       <span>{post.data.category}</span>
       <span>{formatDate(post.data.date)}</span>
     </p>
-    <h2><a href={`/actualites/${post.id}/`}>{post.data.title}</a></h2>
+    <h2><a href={`/actualites/${slug}/`}>{post.data.title}</a></h2>
     <p>{post.body?.slice(0, 150).replace(/\n+/g, " ")}...</p>
-    <a class="text-link" href={`/actualites/${post.id}/`}>Lire l'article</a>
+    <a class="text-link" href={`/actualites/${slug}/`}>Lire l'article</a>
   </div>
 </article>
