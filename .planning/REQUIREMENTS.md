@@ -56,25 +56,24 @@
 
 ## Traceability
 
-Rempli lors de la création du roadmap.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DOCS-01 | — | Pending |
-| DOCS-02 | — | Pending |
-| DOCS-03 | — | Pending |
-| DOCS-04 | — | Pending |
-| BRAND-01 | — | Pending |
-| CONT-01 | — | Pending |
-| CONT-02 | — | Pending |
-| DEPL-01 | — | Pending |
-| DEPL-02 | — | Pending |
+| DOCS-01 | 3 | Pending |
+| DOCS-02 | 3 | Pending |
+| DOCS-03 | 3 | Pending |
+| DOCS-04 | 3 | Pending |
+| BRAND-01 | 2 | Pending |
+| CONT-01 | 1 | Pending |
+| CONT-02 | 1 | Pending |
+| DEPL-01 | 3 | Pending |
+| DEPL-02 | 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 9 total
-- Mapped to phases: 0
-- Unmapped: 9 (roadmap à créer)
+- Mapped to phases: 9
+- Unmapped: 0
+- Coverage: 100% ✓
 
 ---
 *Requirements defined: 2026-04-02*
-*Last updated: 2026-04-02 after initial definition*
+*Last updated: 2026-04-02 after roadmap creation*
