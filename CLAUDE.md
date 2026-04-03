@@ -45,7 +45,7 @@ Site web statique du syndicat FO Com Supports Banque Postale, destiné aux équi
 - cookie (^1.1.1) - HTTP cookie parsing/serialization
 ## Configuration
 - No environment variables file detected (static site, no secrets required)
-- Site URL configured in `astro.config.mjs`: https://focom-suportsbanquepostale.fr
+- Site URL configured in `astro.config.mjs`: https://focom-supportsbanquepostale.fr
 - `astro.config.mjs` - Main Astro configuration
 - `tsconfig.json` - TypeScript strict configuration (extends astro/tsconfigs/strict)
 - `wrangler.toml` - Cloudflare Pages deployment config
