@@ -1,5 +1,5 @@
 node_modules
 dist
 .astro
-public/images/posts
+public/
 src/generated/image-map.json
