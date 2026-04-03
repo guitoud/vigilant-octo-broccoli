@@ -101,6 +101,7 @@ None at planning stage.
 |---|-------------|------|--------|-----------|
 | 260403-jgy | Setup GitHub Actions deploy + create codespaces readme | 2026-04-03 | 7f65021 | [260403-jgy-setup-github-actions-deploy-create-codes](./quick/260403-jgy-setup-github-actions-deploy-create-codes/) |
 | 260403-jpe | Create main README.md pointing to contribution and deployment guides | 2026-04-03 | c3a21bc | [260403-jpe-create-main-readme-md-pointing-to-contri](./quick/260403-jpe-create-main-readme-md-pointing-to-contri/) |
+| 260403-jvk | Clean up CNP references - delete article and correct documentation | 2026-04-03 | e6d358a | [260403-jvk-nettoyer-les-references-a-cnp-dans-le-pr](./quick/260403-jvk-nettoyer-les-references-a-cnp-dans-le-pr/) |
 
 ### TODOs
 
