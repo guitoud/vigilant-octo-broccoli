@@ -1,6 +1,6 @@
 # FO Com Supports Banque Postale — Site syndical
 
-Site web statique du syndicat FO Com Supports Banque Postale, destiné aux équipes travaillant pour La Banque Postale et CNP Assurances au sein de l'établissement Supports Banque. Publie des analyses syndicales, points d'alerte sur les réorganisations, rappels sur les droits collectifs et prises de position.
+Site web statique du syndicat FO Com Supports Banque Postale, destiné aux équipes travaillant pour La Banque Postale au sein de l'établissement Supports Banque. Publie des analyses syndicales, points d'alerte sur les réorganisations, rappels sur les droits collectifs et prises de position.
 
 ## À quoi ça sert ?
 

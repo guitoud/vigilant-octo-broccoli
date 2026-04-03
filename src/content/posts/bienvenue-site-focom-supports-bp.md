@@ -5,7 +5,7 @@ image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format
 category: "Vie de section"
 ---
 
-FO Com Supports Banque Postale ouvre ce site pour centraliser les informations utiles aux agents des postes qui travaillent pour La Banque Postale et CNP Assurances au sein de l'etablissement Supports Banque.
+FO Com Supports Banque Postale ouvre ce site pour centraliser les informations utiles aux agents qui travaillent pour La Banque Postale au sein de l'etablissement Supports Banque.
 
 L'objectif est simple : publier des analyses courtes, des points d'alerte quand il y a des reorganisations, des rappels sur les droits collectifs et les accords collectifs, ainsi que les prises de position de notre syndicat.
 

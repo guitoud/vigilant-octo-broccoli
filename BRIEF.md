@@ -1,15 +1,16 @@
 # Brief : Site FO Com Supports Banque Postale
 
 ## Domaine
-`focom-suportsbanquepostale.fr`
+`focom-supportsbanquepostale.fr`
 
 ## Identité
 - **Nom** : FO Com - Supports Banque Postale
 - **Organisation** : Fédération Force Ouvrière de la Communication (FO Com)
-- **Périmètre** : Établissement Supports Banque Postale de La Poste — agents qui travaillent au titre et au compte de La Banque Postale et de l'assurance CNP
+- **Périmètre** : Établissement Disctinct Supports Banque Postale de La Poste — les agents qui travaillent pour La Banque Postale
 - **Groupe** : Groupe Caisse des Dépôts (La Poste, La Banque Postale, CNP Assurances)
 
 ## Inspiration
+
 Le site doit s'inspirer fortement de https://focom-laposte.fr :
 - Design épuré, couleurs FO (rouge/blanc/bleu ou rouge/noir selon la charte FO Com)
 - Navigation claire : accueil, actualités, contact

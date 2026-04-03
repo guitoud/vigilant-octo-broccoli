@@ -18,8 +18,8 @@ export const contactData: ContactData = {
   representants: [
     { role: "Coordinateur syndical", nom: "Guillaume DUMAS" },
     { role: "Elu CSE", nom: "Ana-Maria VAZQUEZ" },
-    { role: "Referente QVCT", nom: "Sandrine Birais" },
+    { role: "Referente RGPD", nom: "Marie-Helene DESOUZA" },
   ],
   messageRelais:
-    "Les messages peuvent aussi etre relayes vers les representants locaux pour les equipes Supports BP et CNP.",
+    "Les messages peuvent aussi etre relayes vers les representants locaux pour les equipes Supports BP.",
 };
