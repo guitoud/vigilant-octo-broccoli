@@ -5,13 +5,12 @@ image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format
 category: "Conditions de travail"
 ---
 
-Les remontees des collegues des Supports Banque Postale montrent une hausse des pics d'activite sur plusieurs fonctions d'appui. FO Com demande la mise en place d'un suivi mensuel partage avec les representants du personnel.
+Les remontees terrain des collegues des Supports Banque montrent une hausse des activites sur plusieurs fonctions de nos périmetres sans plus de compensations salariales. FO Com SBP demande la mise en place d'un suivi régulier et partagé avec les representants du personnel.
 
 Ce suivi doit integrer :
 
-- les niveaux de charge par equipe ;
-- le recours aux heures supplementaires ;
+- les niveaux de charge par départements ;
 - les jours de teletravail reellement pris ;
-- les difficultes d'outillage ou d'arbitrage.
+- les difficultes d'outillage et materiels.
 
-Pour FO Com, la question ne se limite pas a la flexibilite. Il faut surtout s'assurer que le teletravail reste compatible avec un volume d'activite soutenable et une priorisation claire des demandes.
+Pour FO Com SBP, la question ne se limite pas a la flexibilite des agents. Il faut surtout s'assurer que le teletravail reste compatible avec un volume d'activite soutenable et une véritable confiance accordés aux agents.
