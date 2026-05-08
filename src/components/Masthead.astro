@@ -1,0 +1,26 @@
+---
+const today = new Intl.DateTimeFormat("fr-FR", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(new Date());
+const formatted = today.charAt(0).toUpperCase() + today.slice(1);
+---
+
+<header class="masthead">
+  <div class="masthead-date">
+    Vol. I — Édition continue<br />
+    {formatted}
+  </div>
+  <h1 class="masthead-title">
+    Le <em>Bulletin</em> Supports BP
+  </h1>
+  <div class="masthead-edition">
+    Édition syndicale<br />
+    FO Com — Issy-les-Moulineaux
+  </div>
+  <p class="masthead-sub">
+    Les analyses, alertes et prises de position des agents de La Banque Postale
+  </p>
+</header>

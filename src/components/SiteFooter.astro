@@ -1,0 +1,22 @@
+---
+import { contactData } from "../config/contact";
+---
+
+<footer class="site-footer">
+  <div>
+    <b>Le Bulletin Supports BP</b>
+    <span class="brand-name">FO Com Supports Banque Postale</span>
+    Édition syndicale · focom-supportsbanquepostale.fr
+  </div>
+  <div>
+    <b>Section</b>
+    <a href="/">Accueil</a> · <a href="/actualites">Actualités</a> ·
+    <a href="/section">Notre section</a> · <a href="/contact">Contact</a>
+  </div>
+  <div>
+    <b>Mentions</b>
+    Site syndical sous responsabilité de la section FO Com Supports BP. Permanence&nbsp;: {
+      contactData.permanence
+    }. Contact&nbsp;: {contactData.email}.
+  </div>
+</footer>

@@ -1,0 +1,26 @@
+---
+import { contactData } from "../config/contact";
+
+interface Props {
+  active?: "home" | "news" | "section" | "contact";
+}
+const { active = "home" } = Astro.props;
+
+const items = [
+  { key: "home", label: "Accueil", href: "/" },
+  { key: "news", label: "Actualités", href: "/actualites" },
+  { key: "section", label: "Notre section", href: "/section" },
+  { key: "contact", label: "Contact", href: "/contact" },
+] as const;
+---
+
+<nav class="site-nav">
+  {
+    items.map((item) => (
+      <a href={item.href} class={item.key === active ? "active" : ""}>
+        {item.label}
+      </a>
+    ))
+  }
+  <span class="meta">{contactData.email}</span>
+</nav>

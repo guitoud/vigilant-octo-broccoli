@@ -1,0 +1,45 @@
+---
+import { contactData } from "../config/contact";
+---
+
+<section class="pillar">
+  <div>
+    <div class="eyebrow" style="color:#d4001a">★ Notre section</div>
+    <h3>Une voix syndicale<br />pour les agents Supports BP.</h3>
+    <p>
+      FO Com Supports Banque Postale rassemble les agents qui travaillent pour
+      La Banque Postale au sein de l'établissement Supports Banque. Nous
+      publions des analyses courtes, des points d'alerte et des rappels sur les
+      droits collectifs.
+    </p>
+    <blockquote>
+      « Plus de 50 ans en lutte et droits sociaux. Défense des salariés, des
+      services publics, des droits collectifs et individuels. »
+    </blockquote>
+  </div>
+  <ul>
+    <li>
+      <b>01</b>
+      <span>
+        <strong>Publier une alerte en quelques minutes</strong>
+        Via un simple fichier Markdown — sans friction technique, déploiement
+        automatique en 3-4 minutes.
+      </span>
+    </li>
+    <li>
+      <b>02</b>
+      <span>
+        <strong>Un site 100 % statique, 100 % public</strong>
+        Pas de base de données, pas de CMS, pas d'authentification. Git est la
+        source de vérité.
+      </span>
+    </li>
+    <li>
+      <b>03</b>
+      <span>
+        <strong>Permanence physique</strong>
+        {contactData.permanence} — {contactData.lieu}.
+      </span>
+    </li>
+  </ul>
+</section>

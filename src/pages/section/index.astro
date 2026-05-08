@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Notre section — FO Com Supports BP" activePage="section">
+  <section class="wip">
+    <div class="eyebrow">★ Notre section</div>
+    <h1>Page en construction</h1>
+    <p>
+      Cette page est en cours de préparation. Elle présentera bientôt
+      l'historique de la section, l'équipe militante et nos engagements
+      pour les agents Supports Banque Postale.
+    </p>
+    <p>
+      En attendant, retrouvez nos publications dans la rubrique
+      <a href="/actualites">Actualités</a> ou
+      <a href="/contact">contactez-nous</a> directement.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .wip {
+    max-width: 38rem;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  .wip h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -.02em;
+    margin: .4rem 0 1.2rem;
+  }
+  .wip p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--fo-muted);
+    margin-bottom: 1rem;
+  }
+  .wip a {
+    color: var(--fo-red);
+    font-weight: 700;
+    border-bottom: 1px solid var(--fo-red);
+  }
+</style>

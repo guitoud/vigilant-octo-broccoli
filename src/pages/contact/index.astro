@@ -1,41 +1,102 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
 import { contactData } from "../../config/contact";
 ---
 
-<BaseLayout title="Contact | FO Com Supports Banque Postale">
-  <Header />
-  <main class="section">
-    <div class="container contact-grid">
-      <section class="contact-card">
-        <p class="eyebrow">Contact</p>
-        <h1>Joindre la section FO Com Supports Banque Postale</h1>
-        <p>
-          Pour une question individuelle, un signalement sur les conditions de travail ou une demande de rendez-vous,
-          utilisez les coordonnees ci-dessous.
-        </p>
-
-        <ul class="contact-list">
-          <li><strong>Email :</strong> {contactData.email}</li>
-          <li><strong>Permanence :</strong> {contactData.permanence}</li>
-          <li><strong>Site :</strong> {contactData.lieu}</li>
-        </ul>
-      </section>
-
-      <section class="contact-card contact-card-alt">
-        <p class="eyebrow">Representants</p>
-        <ul class="contact-list">
-          {contactData.representants.map((r) => (
-            <li><strong>{r.role} :</strong> {r.nom}</li>
-          ))}
-        </ul>
-        <p>
-          {contactData.messageRelais}
-        </p>
-      </section>
+<Layout title="Contact — FO Com Supports BP" activePage="contact">
+  <section class="contact-hero">
+    <div>
+      <div class="eyebrow">★ Nous joindre</div>
+      <h1>
+        Une question, une alerte,<br />un <em>témoignage</em>&nbsp;?
+      </h1>
     </div>
-  </main>
-  <Footer />
-</BaseLayout>
+    <p>
+      {contactData.messageRelais} Toute communication reste confidentielle —
+      c'est la règle syndicale.
+    </p>
+  </section>
+
+  <div class="contact-grid">
+    <form
+      class="contact-form"
+      action="mailto:contact@focom-supportsbanquepostale.fr"
+      method="post"
+      enctype="text/plain"
+    >
+      <div class="row">
+        <div>
+          <label for="name">Prénom & nom</label>
+          <input id="name" name="name" type="text" placeholder="Marie Dupont" required />
+        </div>
+        <div>
+          <label for="team">Équipe / périmètre</label>
+          <input
+            id="team"
+            name="team"
+            type="text"
+            placeholder="Crédits & Recouvrements"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="email">Adresse e-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="prénom.nom@laposte.fr"
+          required
+        />
+      </div>
+      <div>
+        <label for="subject">Sujet</label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          placeholder="Charge de travail, rémunération, télétravail…"
+          required
+        />
+      </div>
+      <div>
+        <label for="message">Votre message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Je souhaite vous signaler que…"
+          required></textarea>
+      </div>
+      <button class="btn" type="submit">Envoyer le message →</button>
+      <div
+        style="font-family:'Archivo Narrow',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--fo-muted)"
+      >
+        Réponse sous 48 h ouvrées · Confidentiel
+      </div>
+    </form>
+
+    <div>
+      <div class="eyebrow">★ Vos représentants</div>
+      <div class="reps" style="margin-top:.6rem">
+        {
+          contactData.representants.map((rep) => (
+            <div class="reps-card">
+              <div class="role">{rep.role}</div>
+              <div class="nom">{rep.nom}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="perm">
+        <div class="k">Permanence</div>
+        <div class="v">{contactData.permanence}</div>
+        <div class="k">Lieu</div>
+        <div class="v">{contactData.lieu}</div>
+        <div class="k">E-mail</div>
+        <div class="v" style="font-size:.95rem">{contactData.email}</div>
+      </div>
+    </div>
+  </div>
+</Layout>

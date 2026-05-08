@@ -1,49 +1,31 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import PostCard from "../components/PostCard.astro";
+import Pillar from "../components/Pillar.astro";
 
-const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const latestPosts = posts.slice(0, 3);
+const allPosts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const [featured, ...rest] = allPosts;
+const recent = rest.slice(0, 3);
 ---
 
-<BaseLayout title="FO Com Supports Banque Postale">
-  <Header />
-  <main>
-    <Hero />
+<Layout
+  title="FO Com Supports Banque Postale — Le Bulletin"
+  activePage="home"
+>
+  {featured && <Hero post={featured} />}
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">A la une</p>
-            <h2>Dernieres actualites</h2>
-          </div>
-          <a class="text-link" href="/actualites/">Toutes les actualites</a>
-        </div>
+  <header class="section-head">
+    <h2>À la une de cette édition</h2>
+    <a href="/actualites" class="more">Toutes les actualités →</a>
+  </header>
 
-        <div class="post-grid">
-          {latestPosts.map((post) => <PostCard post={post} />)}
-        </div>
-      </div>
-    </section>
+  <div class="post-grid">
+    {recent.map((post) => <PostCard post={post} />)}
+  </div>
 
-    <section class="section section-alt">
-      <div class="container info-grid">
-        <div>
-          <p class="eyebrow">La section</p>
-          <h2>Une presence de terrain pour les equipes Supports BP</h2>
-        </div>
-        <p>
-          FO Com intervient sur les questions d'organisation, d'emplois, de formation, de teletravail et de
-          reconnaissance des metiers Supports Banque Postale. Le site centralise les informations utiles et les prises
-          de position de la section.
-        </p>
-      </div>
-    </section>
-  </main>
-  <Footer />
-</BaseLayout>
+  <Pillar />
+</Layout>

@@ -1,0 +1,50 @@
+---
+// Placeholder graphique typé syndicat — bloc de couleur + motif + watermark FO·COM.
+// Le motif et la couleur sont dérivés du slug + de la catégorie pour rester déterministes.
+
+interface Props {
+  title: string;
+  category: string;
+  date: Date;
+  slug: string;
+}
+const { category, date, slug } = Astro.props;
+
+// Distribution déterministe à partir du slug
+function hash(str: string) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+const motifs = ["halftone", "grid", "stripes", "dots", "rays"] as const;
+const palettes = [
+  { color: "#1b2a4a", accent: "#d4001a" },
+  { color: "#15161a", accent: "#d4001a" },
+  { color: "#d4001a", accent: "#ffffff" },
+  { color: "#1b2a4a", accent: "#f6f2ea" },
+] as const;
+
+const h = hash(slug);
+const motif = motifs[h % motifs.length];
+const palette = palettes[h % palettes.length];
+
+const dateShort = `${String(date.getDate()).padStart(2, "0")}·${String(date.getMonth() + 1).padStart(2, "0")}`;
+---
+
+<div
+  class="ph"
+  style={`--ph-color:${palette.color};--ph-accent:${palette.accent}`}
+>
+  <div class={`ph-motif ph-motif--${motif}`}></div>
+  <div class="ph-inner">
+    <div class="ph-top">
+      <span class="cat">{category}</span>
+      <span class="date">{dateShort}</span>
+    </div>
+    <div></div>
+    <div class="ph-mark">
+      FO·COM
+      <span>SUPPORTS BP</span>
+    </div>
+  </div>
+</div>

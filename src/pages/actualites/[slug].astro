@@ -1,39 +1,54 @@
 ---
 import { getCollection, render } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import Placeholder from "../../components/Placeholder.astro";
 import { formatDate } from "../../utils/format";
-import { resolvePostImage } from "../../utils/images";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
+    params: { slug: post.id.replace(/\.md$/, "") },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
+const { title, date, category } = post.data;
+const slug = post.id.replace(/\.md$/, "");
 const { Content } = await render(post);
-const imageSrc = resolvePostImage(post.id.replace(/\.md$/, ""), post.data.image);
 ---
 
-<BaseLayout title={`${post.data.title} | FO Com Supports Banque Postale`}>
-  <Header />
-  <main class="section">
-    <div class="container article-shell">
-      <a class="back-link" href="/actualites/">Retour aux actualites</a>
-      <p class="post-meta">
-        <span>{post.data.category}</span>
-        <span>{formatDate(post.data.date)}</span>
-      </p>
-      <h1>{post.data.title}</h1>
-      <img class="article-cover" src={imageSrc} alt={post.data.title} />
-      <article class="article-content">
-        <Content />
-      </article>
+<Layout title={`${title} — FO Com Supports BP`} activePage="news">
+  <article class="article-shell">
+    <p>
+      <a href="/actualites" class="back-link">← Toutes les actualités</a>
+    </p>
+
+    <div class="eyebrow" style="margin-top:1rem">{category}</div>
+    <h1
+      style="font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2rem,4.5vw,3rem);line-height:1.0;letter-spacing:-.025em;margin:.4rem 0 .8rem"
+    >
+      {title}
+    </h1>
+    <div class="byline">
+      Section FO Com Supports BP · {formatDate(date)}
     </div>
-  </main>
-  <Footer />
-</BaseLayout>
+
+    <div class="article-cover" style="position:relative">
+      <Placeholder
+        title={title}
+        category={category}
+        date={date}
+        slug={slug}
+      />
+    </div>
+
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <p style="margin-top:2rem">
+      <a href="/actualites" class="back-link">← Retour aux actualités</a>
+    </p>
+  </article>
+</Layout>

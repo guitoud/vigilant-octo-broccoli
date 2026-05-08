@@ -1,25 +1,37 @@
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">Syndicat FO Com Supports BP</p>
-      <h1>Informer, defendre et relayer les enjeux des Supports Banque Postale.</h1>
-      <p class="hero- copy">
-        Retrouvez les actualites de la section, les analyses sur l'organisation du travail et les points de vigilance
-        pour les equipes qui interviennent pour La Banque Postale.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="/actualites/">Voir les actualites</a>
-        <a class="button button-secondary" href="/contact/">Contacter la section</a>
-      </div>
-    </div>
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils/format";
+import Placeholder from "./Placeholder.astro";
 
-    <aside class="hero-panel">
-      <p class="panel-kicker">Nos priorites</p>
-      <ul>
-        <li>Conditions de travail et charge d'activite</li>
-        <li>Information sur les reorganisations</li>
-        <li>Defense des droits collectifs et individuels</li>
-      </ul>
-    </aside>
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const { title, date, category } = post.data;
+const slug = post.id.replace(/\.md$/, "");
+const lead =
+  post.body?.split(/\n+/).find((line) => line.trim() && !line.startsWith("#"))?.slice(0, 320) ??
+  "";
+---
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">★ Une — Édito syndical</div>
+    <h1>{title}</h1>
+    <p class="hero-deck">{lead}</p>
+    <div class="byline">
+      — Section FO Com Supports BP · {formatDate(date)} · {category}
+    </div>
+    <p style="margin-top:1rem">
+      <a href={`/actualites/${slug}`} class="back-link">Lire l'édito →</a>
+    </p>
+  </div>
+  <div style="position:relative;aspect-ratio:4/5">
+    <Placeholder
+      title={title}
+      category={category}
+      date={date}
+      slug={slug}
+    />
   </div>
 </section>

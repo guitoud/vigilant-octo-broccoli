@@ -1,37 +1,36 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../utils/format";
-import { resolvePostImage } from "../utils/images";
+import Placeholder from "./Placeholder.astro";
 
 interface Props {
-  post: {
-    id: string;
-    data: {
-      title: string;
-      date: Date;
-      image: string;
-      category: string;
-    };
-    body?: string;
-  };
+  post: CollectionEntry<"posts">;
+  excerpt?: string;
 }
-
-const { post } = Astro.props;
+const { post, excerpt } = Astro.props;
+const { title, date, category } = post.data;
 const slug = post.id.replace(/\.md$/, "");
-const imageSrc = resolvePostImage(slug, post.data.image);
+const computed =
+  excerpt ??
+  post.body?.split(/\n+/).find((line) => line.trim() && !line.startsWith("#"))?.slice(0, 220) ??
+  "";
 ---
 
 <article class="post-card">
-  <a href={`/actualites/${slug}/`} class="post-card-image">
-    <img src={imageSrc} alt={post.data.title} loading="lazy" />
+  <a href={`/actualites/${slug}`} class="post-card-img">
+    <Placeholder
+      title={title}
+      category={category}
+      date={date}
+      slug={slug}
+    />
   </a>
-
-  <div class="post-card-body">
-    <p class="post-meta">
-      <span>{post.data.category}</span>
-      <span>{formatDate(post.data.date)}</span>
-    </p>
-    <h2><a href={`/actualites/${slug}/`}>{post.data.title}</a></h2>
-    <p>{post.body?.slice(0, 150).replace(/\n+/g, " ")}...</p>
-    <a class="text-link" href={`/actualites/${slug}/`}>Lire l'article</a>
+  <div class="post-card-cat">{category}</div>
+  <h3 class="post-card-title">
+    <a href={`/actualites/${slug}`}>{title}</a>
+  </h3>
+  <p class="post-card-excerpt">{computed}</p>
+  <div class="post-card-meta">
+    {formatDate(date)} · <a href={`/actualites/${slug}`}>Lire l'article →</a>
   </div>
 </article>
